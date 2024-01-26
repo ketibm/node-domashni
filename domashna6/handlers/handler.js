@@ -16,7 +16,7 @@ function handleUser(req, res, email) {
 }
 
 function handleNotFound(req, res) {
-  res.status(404).end("Not Found");
+  res.status("404 Not Found");
 }
 
 module.exports = { welcome, test, handleUser, handleNotFound };
