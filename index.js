@@ -1,25 +1,15 @@
-const http = require("http");
-const url = require("url");
+const express = require("express");
 const {
-  welcome,
-  test,
-  handleUser,
-  handleNotFound,
-} = require("./handlers/handler");
-
-const server = http.createServer((req, res) => {
-  const parsedUrl = url.parse(req.url, true);
-  if (parsedUrl.pathname === "/welcome") {
-    welcome(req, res);
-  } else if (parsedUrl.pathname === "/test") {
-    test(req, res);
-  } else if (parsedUrl.pathname === "/user") {
-    handleUser(req, res, parsedUrl.query.email);
-  } else {
-    handleNotFound(req, res);
-  }
-});
-const port = 8000;
-server.listen(port, () => {
-  console.log(`Server listening on port : ${port}`);
-});
+  getRecipes,
+  addRecipes,
+  editRecipes,
+  deleteRecipes,
+} = require("./recipes");
+const app = express();
+// middleware - da moze da zememe baranja so telo so json
+app.use(express.json());
+app.get("/recipes", getRecipes);
+app.post("/recipes", addRecipes);
+app.put("/recipes", editRecipes);
+app.delete("/recipes", deleteRecipes);
+app.listen(3000, () => console.log("Server started at port 3000 "));
