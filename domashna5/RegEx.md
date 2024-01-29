@@ -3,7 +3,7 @@ Email
 ^[a-z0-9\_.-][^A-Z]+@[a-z]{4,}\.com
 
 Password
-^(?=._[a-z])(?=._[A-Z])(?=._\d)(?=._[!@#$*&])[a-zA-Z\d!@#$*&]{6,}
+^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=._[!@#$*&])[a-zA-Z\d!@#$*&]{6,}
 
 Phone number
 ^\+389\s\d{2}\s\d{3}\s\d{3} - macedonian number
