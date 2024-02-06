@@ -9,7 +9,6 @@ const read = async (fileName) => {
     });
   });
 };
-
 const write = async (fileName, data) => {
   data = JSON.stringify(data);
   return new Promise((resolve, reject) => {
@@ -22,7 +21,6 @@ const write = async (fileName, data) => {
 
 const addRecipe = async (data) => {
   let file = await read("recepti.json");
-
   file.push(data);
   await write("recepti.json", file);
 };
@@ -36,11 +34,13 @@ const removeRecipe = async (index) => {
 const listRecipes = async () => {
   return await read("recepti.json");
 };
+
 const updateRecipe = async (index, updatedRecipe) => {
   let file = await read("recepti.json");
   file[index] = updatedRecipe;
   await write("recepti.json", file);
 };
+
 module.exports = {
   read,
   write,

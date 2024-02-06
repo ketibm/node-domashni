@@ -14,25 +14,27 @@
         type="text"
         name="recipe"
         placeholder="Recipe"
-        value="<%= recept.recipe %>"
+        value="<%= recept &&
+      recept.recipe %>"
       />
       <input
         type="text"
         name="ingredients"
         placeholder="Ingredients"
-        value="<%= JSON.stringify(recept.ingredients) %>"
+        value="<%= JSON.stringify(recept &&
+      recept.ingredients) %>"
       />
       <input
         type="text"
         name="preparation"
         placeholder="Preparation"
-        value="<%= recept.preparation %>"
+        value="<%= recept && recept.preparation %>"
       />
       <input
         type="number"
         name="calories"
         placeholder="Calories"
-        value="<%= recept.calories %>"
+        value="<%= recept && recept.calories %>"
       />
       <button type="submit">Update</button>
     </form>

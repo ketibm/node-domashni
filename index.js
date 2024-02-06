@@ -20,4 +20,5 @@ app.get("/recepti", getRecipes);
 app.get("/brishi", deleteRecipes);
 app.get("/update/:id", getUpdate);
 app.post("/update/:id", postUpdate);
-app.listen(8000, () => console.log("Server started at port 8000!"));
+
+app.listen(3000, () => console.log("Server started at port 3000"));
